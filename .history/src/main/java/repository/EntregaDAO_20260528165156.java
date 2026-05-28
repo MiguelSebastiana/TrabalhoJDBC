@@ -1,0 +1,19 @@
+package repository;
+
+import java.sql.SQLException;
+
+import model.Entrega;
+
+public class EntregaDAO {
+    
+    public Entrega inserirEntrega(Entrega engrega) throws SQLException {
+
+        String command = """
+                INSERT INTO Entrega
+                    (pedido_id
+                     motorista_id
+                     data_saida
+                     data_entrega)
+                """;
+    }
+}
