@@ -1,14 +1,11 @@
 package view;
 
-import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 
 import model.Cliente;
 import model.Motorista;
-import model.Pedido;
-import model.enums.StatusPedido;
 import repository.ClienteDAO;
 import utils.Ferramentas;
 
@@ -42,31 +39,13 @@ public class MenuInicial {
                 int opcao = Ferramentas.lerInteiro();
 
                 switch (opcao) {
-                    case 1:{
+                    case 1:
                         cadastrarCliente();
                         break;
-                    }
-
-                    case 2:{
-                        cadastrarMotorista();
-                        break;
-                    }
-
-                    case 3:{
-                        criarPedido();
-                        break;
-                    }
-
-                    case 4:{
-                        atribuirPedidoAoMotorista();
-                        break;
-                    }
                 
-                    default:{
+                    default:
                         break;
                     }
-                }
-
                }catch(InputMismatchException e){
                     e.printStackTrace();
                }
@@ -75,19 +54,19 @@ public class MenuInicial {
 
      public static void cadastrarCliente(){
 
-        System.out.print("Digite o nome do cliente: ");
+        System.out.println("Digite o nome do cliente: ");
         String nome = Ferramentas.lerString();
 
-        System.out.print("Digite o cpf do cliente: ");
+        System.out.println("Digite o cpf do cliente: ");
         String cpf = Ferramentas.lerString();
 
-        System.out.print("Digite o endereço do cliente: ");
+        System.out.println("Digite o endereço do cliente: ");
         String endereco = Ferramentas.lerString();
 
-        System.out.print("Digite a cidade do cliente: ");
+        System.out.println("Digite a cidade do cliente: ");
         String cidade = Ferramentas.lerString();
 
-        System.out.print("Digite o estado do cliente: ");
+        System.out.println("Digite o estado do cliente: ");
         String estado = Ferramentas.lerString();
 
         Cliente cliente = new Cliente (nome, cpf, endereco, cidade, estado);
@@ -96,16 +75,16 @@ public class MenuInicial {
      }
 
      public static void cadastrarMotorista(){
-        System.out.print("Digite o nome do motorista: ");
+        System.out.println("Digite o nome do motorista: ");
         String nome = Ferramentas.lerString();
 
-        System.out.print("Digite o cnh do motorista: ");
+        System.out.println("Digite o cnh do motorista: ");
         String cnh = Ferramentas.lerString();
 
-        System.out.print("Digite o veiculo do motorista: ");
+        System.out.println("Digite o veiculo do motorista: ");
         String veiculo = Ferramentas.lerString();
 
-        System.out.print("Digite a cidade base do motorista: ");
+        System.out.println("Digite a cidade base do motorista: ");
         String cidade_base = Ferramentas.lerString();
 
         Motorista motorista = new Motorista(nome, cnh, veiculo, cidade_base);
@@ -113,22 +92,10 @@ public class MenuInicial {
      }
 
      public static void criarPedido (){
-        System.out.print("Digite o id do cliente responsável pelo cliente: ");
+        System.out.println("Digite o id do cliente responsável pelo cliente: ");
         int id = Ferramentas.lerInteiro();
 
         LocalDate date = LocalDate.now();
-        Date data = Date.valueOf(date);
-
-        System.out.print("Digite o volume: ");
-        double volume = Ferramentas.lerDouble();
-
-        System.out.print("Digite o peso: ");
-        double peso = Ferramentas.lerDouble();
-
-        Pedido pedido = new Pedido(id, data, volume, peso, StatusPedido.PENDENTE);
-     }
-
-     public static void atribuirPedidoAoMotorista(){
-        System.out.print("Digite o id do motorista desejado: ");
+        Date data = date
      }
 }

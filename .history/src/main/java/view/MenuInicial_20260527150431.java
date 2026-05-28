@@ -53,20 +53,12 @@ public class MenuInicial {
                     }
 
                     case 3:{
-                        criarPedido();
-                        break;
-                    }
-
-                    case 4:{
-                        atribuirPedidoAoMotorista();
-                        break;
+                        
                     }
                 
-                    default:{
+                    default:
                         break;
                     }
-                }
-
                }catch(InputMismatchException e){
                     e.printStackTrace();
                }

@@ -42,31 +42,13 @@ public class MenuInicial {
                 int opcao = Ferramentas.lerInteiro();
 
                 switch (opcao) {
-                    case 1:{
+                    case 1:
                         cadastrarCliente();
                         break;
-                    }
-
-                    case 2:{
-                        cadastrarMotorista();
-                        break;
-                    }
-
-                    case 3:{
-                        criarPedido();
-                        break;
-                    }
-
-                    case 4:{
-                        atribuirPedidoAoMotorista();
-                        break;
-                    }
                 
-                    default:{
+                    default:
                         break;
                     }
-                }
-
                }catch(InputMismatchException e){
                     e.printStackTrace();
                }

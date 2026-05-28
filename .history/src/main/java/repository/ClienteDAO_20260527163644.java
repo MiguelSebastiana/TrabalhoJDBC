@@ -46,9 +46,36 @@ public class ClienteDAO {
             return cliente;
     }
 
+    public Motorista inserirMotorista(Motorista motorista) throws SQLException{
+        String command = """
+                INSERT INTO Motorista
+                    (nome, 
+                    cnh,
+                    veiculo,
+                    cidade_base)
+                VALUES
+                (?,?,?,?)
+                """;
 
+                try(Connection conn = ConnectionFactory.getConnection();
+                    PreparedStatement stmt = conn.prepareStatement(command, Statement.RETURN_GENERATED_KEYS)){
+                    
+                        stmt.setString(1, motorista.getNome());
+                        stmt.setString(2, motorista.getCnh());
+                        stmt.setString(3, motorista.getVeiculo());
+                        stmt.setString(4, motorista.getCidade_base());
 
-    public Pedido inserirPedido(Pedido pedido) t
+                        ResultSet rs = stmt.getGeneratedKeys();
+
+                        if(rs.next()){
+                            motorista.setId(rs.getInt(1));
+                        }
+                    }
+
+            return motorista;
+    }
+
+    public Pedido inserirPedido(Pedido pedido) throws SQLException
 
 
 }

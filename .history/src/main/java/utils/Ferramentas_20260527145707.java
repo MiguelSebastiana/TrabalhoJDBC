@@ -20,11 +20,5 @@ public class Ferramentas {
         
     }
 
-    public static Double lerDouble(){
-
-        double num = sc.nextDouble();
-        sc.nextLine();
-
-        return num;
-    }
+    public static Dou]
 }

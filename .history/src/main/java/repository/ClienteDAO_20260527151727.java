@@ -8,8 +8,6 @@ import java.sql.SQLException;
 
 import connection.ConnectionFactory;
 import model.Cliente;
-import model.Motorista;
-import model.Pedido;
 
 public class ClienteDAO {
     
@@ -46,9 +44,38 @@ public class ClienteDAO {
             return cliente;
     }
 
+    public Cliente inserirCliente(Cliente cliente) throws SQLException{
+        String command = """
+                INSERT INTO Cliente
+                    (nome,
+                    cpf_cnpj,
+                    endereco,
+                    cidade,
+                    estado)
+                VALUES
+                (?,?,?,?,?)    
+                """;
 
+        try(Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(command, Statement.RETURN_GENERATED_KEYS)){
 
-    public Pedido inserirPedido(Pedido pedido) t
+                stmt.setString(1, cliente.getNome());
+                stmt.setString(2, cliente.getCpf_cnpj());
+                stmt.setString(3, cliente.getEndereco());
+                stmt.setString(4, cliente.getCidade());
+                stmt.setString(5, cliente.getEstado());
+                stmt.executeUpdate();
+
+                ResultSet rs = stmt.getGeneratedKeys();
+
+                if(rs.next()){
+                    cliente.setId(rs.getInt(1));
+                }
+
+            }
+
+            return cliente;
+    }
 
 
 }

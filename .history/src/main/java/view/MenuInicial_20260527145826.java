@@ -7,8 +7,6 @@ import java.util.InputMismatchException;
 
 import model.Cliente;
 import model.Motorista;
-import model.Pedido;
-import model.enums.StatusPedido;
 import repository.ClienteDAO;
 import utils.Ferramentas;
 
@@ -42,31 +40,13 @@ public class MenuInicial {
                 int opcao = Ferramentas.lerInteiro();
 
                 switch (opcao) {
-                    case 1:{
+                    case 1:
                         cadastrarCliente();
                         break;
-                    }
-
-                    case 2:{
-                        cadastrarMotorista();
-                        break;
-                    }
-
-                    case 3:{
-                        criarPedido();
-                        break;
-                    }
-
-                    case 4:{
-                        atribuirPedidoAoMotorista();
-                        break;
-                    }
                 
-                    default:{
+                    default:
                         break;
                     }
-                }
-
                }catch(InputMismatchException e){
                     e.printStackTrace();
                }
@@ -120,15 +100,6 @@ public class MenuInicial {
         Date data = Date.valueOf(date);
 
         System.out.print("Digite o volume: ");
-        double volume = Ferramentas.lerDouble();
-
-        System.out.print("Digite o peso: ");
-        double peso = Ferramentas.lerDouble();
-
-        Pedido pedido = new Pedido(id, data, volume, peso, StatusPedido.PENDENTE);
-     }
-
-     public static void atribuirPedidoAoMotorista(){
-        System.out.print("Digite o id do motorista desejado: ");
+        double volume = Ferramentas.lerDouble();|Z
      }
 }

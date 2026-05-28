@@ -65,7 +65,7 @@ public class MenuInicial {
                     default:{
                         break;
                     }
-                }
+                    }
 
                }catch(InputMismatchException e){
                     e.printStackTrace();

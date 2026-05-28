@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import connection.ConnectionFactory;
 import model.Cliente;
 import model.Motorista;
-import model.Pedido;
 
 public class ClienteDAO {
     
@@ -46,9 +45,19 @@ public class ClienteDAO {
             return cliente;
     }
 
+    public Motorista inserirMotorista(Motorista motorista) throws SQLException{
+        String command = """
+                INSERT INTO Motorista
+                    (nome, 
+                    cnh,
+                    veiculo,
+                    cidade_base)
+                VALUES
+                (?,?,?,?)
+                """;
 
-
-    public Pedido inserirPedido(Pedido pedido) t
+                try()
+    }
 
 
 }
