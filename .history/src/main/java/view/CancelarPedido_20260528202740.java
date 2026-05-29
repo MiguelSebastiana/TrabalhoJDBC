@@ -1,0 +1,22 @@
+package view;
+
+import service.ServicePedido;
+import utils.Ferramentas;
+
+public class CancelarPedido {
+    
+    public static void cancelarPedido(){
+
+        var servicePedido = new ServicePedido();
+
+        listrarPedidos();
+
+        System.out.print("Digite o id do pedido que voce deseja cancelar: ");
+        int id = Ferramentas.lerInteiro();
+    }
+
+    private static void listrarPedidos() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'listrarPedidos'");
+    }
+}
