@@ -1,0 +1,36 @@
+package view;
+
+import model.HistoricoEntrega;
+import service.ServiceHistorico;
+import utils.Ferramentas;
+
+public class RegistrarEvento {
+    
+    public static void registrarEventoEntrega(){
+        
+        Ferramentas.limpaTerminal(40);
+        System.out.println("──────────────── Registrando Evento ───────────────");
+
+        ServiceHistorico service = new ServiceHistorico();
+
+        Ferramentas.limpaTerminal(3);
+        Ferramentas.linha();
+        System.out.print("Id da entrega: ");
+        int idEntrega = Ferramentas.lerInteiro();
+        Ferramentas.linha();
+
+        Ferramentas.linha();
+        System.out.print("Descrição do Evento: ");
+        String descricao = Ferramentas.lerString();
+        Ferramentas.linha();
+
+        try{
+            HistoricoEntrega historico = service.registrarEvento(idEntrega, descricao);
+        }catch (Exception e){
+            Ferramentas.linha();
+            System.out.println("Erro ao registrar evento: " + e.getMessage());
+            Ferramentas.linha();
+        }
+        Ferramentas.esperarTecla();
+    }
+}

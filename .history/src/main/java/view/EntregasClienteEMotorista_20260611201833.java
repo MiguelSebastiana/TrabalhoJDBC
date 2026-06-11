@@ -1,0 +1,42 @@
+package view;
+
+import java.util.List;
+
+import model.Entrega;
+import service.ServiceEntrega;
+import utils.Ferramentas;
+
+public class EntregasClienteEMotorista {
+    
+    public static void entregasClienteEMotorista(){
+        ServiceEntrega service = new ServiceEntrega();
+
+        Ferramentas.l
+        System.out.println("──────── Lista de todas as entregas ────────");
+
+        Ferramentas.limpaTerminal(3);
+        Ferramentas.linha();
+
+        try {
+            List<Entrega> entregas = service.serviceListarEntregas();
+            if(entregas.isEmpty()){
+                System.out.println("Nenhuma entrega encontrada");
+            } else {
+                for(Entrega e : entregas){
+                    System.out.println("Id entrega : " + e.getId());
+                    System.out.println("Pedido id: " + e.getPedido_id());
+                    System.out.println("Motorista id: " + e.getMotorista_id());
+                    System.out.println("Saida: " + e.getData_entrega());
+                    System.out.println("Status: " + e.getStatus());
+                    Ferramentas.linha(); 
+                }
+            }
+        }catch(Exception e){
+            Ferramentas.linha();
+            System.err.println("Erro ao listar entregas: " + e.getMessage());
+            Ferramentas.linha();
+        }
+
+        Ferramentas.esperarTecla();
+    }
+}
