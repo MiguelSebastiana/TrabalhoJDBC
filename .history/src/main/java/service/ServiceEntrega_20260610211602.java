@@ -39,7 +39,7 @@ public class ServiceEntrega {
 
         entrega = entregaDAO.inserirEntrega(entrega);
 
-        pedidoDAO.atualizarStatusPedido(pedidoId, StatusPedido.ENTREGUE);
+        pedido.atualizarStatusPedido(pedidoId, StatusPedido.ENTREGUE);
 
         return entrega;
     }

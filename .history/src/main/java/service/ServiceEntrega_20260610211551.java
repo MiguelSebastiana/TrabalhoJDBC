@@ -10,7 +10,6 @@ import javax.xml.crypto.Data;
 
 import model.Entrega;
 import model.HistoricoEntrega;
-import model.Pedido;
 import model.enums.StatusEntrega;
 import model.enums.StatusPedido;
 import repository.EntregaDAO;

@@ -152,13 +152,7 @@ public class MotoristaDAO {
                     
                     stmt.setInt(1, idMotorista);
 
-                    try(ResultSet rs = stmt.executeQuery()){
-                        if(rs.next()){
-                            return rs.getInt(1) > 0;
-                        }
-                    }
+                    
                 }
-
-            return false;
     }
 }

@@ -154,7 +154,7 @@ public class MotoristaDAO {
 
                     try(ResultSet rs = stmt.executeQuery()){
                         if(rs.next()){
-                            return rs.getInt(1) > 0;
+                            rs.getInt(1) > 0;
                         }
                     }
                 }

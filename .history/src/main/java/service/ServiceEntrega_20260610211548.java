@@ -10,7 +10,6 @@ import javax.xml.crypto.Data;
 
 import model.Entrega;
 import model.HistoricoEntrega;
-import model.Pedido;
 import model.enums.StatusEntrega;
 import model.enums.StatusPedido;
 import repository.EntregaDAO;
@@ -25,7 +24,7 @@ public class ServiceEntrega {
     
     public Entrega serviceGerarEntrega(int pedidoId, int motoristaId) throws SQLException{
 
-        Pedido pedido = pedidoDAO.buscarPedidoPorId(motoristaId);
+        Pedido pedidoDAO = pedidoDAO.buscarPedidoPorId(motoristaId);
 
         if(pedido == null){
              throw new IllegalArgumentException("Pedido não localizado");
