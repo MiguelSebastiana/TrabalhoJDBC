@@ -1,0 +1,18 @@
+package view;
+
+import java.util.List;
+
+import service.ServiceEntrega;
+
+public class EntregasClienteEMotorista {
+    
+    public static void entregasClienteEMotorista(){
+        ServiceEntrega service = new ServiceEntrega();
+
+        System.out.println("--- Lista de todas as entregas ---");
+
+        try {
+            List<Entrega> entregas = service.
+        }
+    }
+}
