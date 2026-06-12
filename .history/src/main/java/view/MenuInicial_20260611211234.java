@@ -119,11 +119,8 @@ public class MenuInicial {
                     }
 
                     case 0:{
-                        Ferramentas.linha();
-                        System.out.println("Saindo do sistema...");
-                        Ferramentas.linha();
                         Ferramentas.Delay(1500);
-                        System.exit(0);
+                        System.exit(1);
                     }
                 
                     default:{

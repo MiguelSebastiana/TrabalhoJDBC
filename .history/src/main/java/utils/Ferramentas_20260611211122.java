@@ -47,10 +47,6 @@ public class Ferramentas {
 
     public static void Delay(int delay){
 
-        try{
-            Thread.sleep(delay);
-        }catch(InterruptedException e){
-            System.err.println("Erro ao realizar delay!");
-        }
+        
     }
 }

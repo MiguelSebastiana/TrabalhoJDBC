@@ -31,7 +31,7 @@ public class EntregaAtrasadoCidade {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Erro ao abrir relatorio atrasados por cidade");
+            System.out.println("Erro ao ");
         }
         Ferramentas.esperarTecla();
 

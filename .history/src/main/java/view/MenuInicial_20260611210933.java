@@ -119,11 +119,7 @@ public class MenuInicial {
                     }
 
                     case 0:{
-                        Ferramentas.linha();
-                        System.out.println("Saindo do sistema...");
-                        Ferramentas.linha();
-                        Ferramentas.Delay(1500);
-                        System.exit(0);
+                        System.exit(1);
                     }
                 
                     default:{
@@ -133,8 +129,7 @@ public class MenuInicial {
 
                }catch(InputMismatchException e){
                     Ferramentas.linha();
-                    System.err.println("O valor deve ser um número!");
-                    Ferramentas.lerString();
+                    System.out.println("O valor deve ser um número!");
                     Ferramentas.linha();
                }
         }while (!verifica);    

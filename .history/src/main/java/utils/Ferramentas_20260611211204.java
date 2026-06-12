@@ -50,7 +50,7 @@ public class Ferramentas {
         try{
             Thread.sleep(delay);
         }catch(InterruptedException e){
-            System.err.println("Erro ao realizar delay!");
+            System.out.println("Erro ao realizar delay!");
         }
     }
 }
