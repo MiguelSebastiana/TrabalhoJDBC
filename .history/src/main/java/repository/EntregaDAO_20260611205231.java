@@ -99,8 +99,8 @@ public class EntregaDAO {
                     ResultSet rs = stmt.executeQuery()){
 
                         while (rs.next()) {
-                            linhas.add(String.format("Motorista: %s | Total de Entregas: %d", 
-                                rs.getString("nome"), rs.getInt("total_entregas")));
+                            linhas.add(String.format("Motorista: % | Total de Entregas: %d", 
+                                    rs.getString("nome"), rs.getInt("total_entregas")));
                         }
                     }
                 

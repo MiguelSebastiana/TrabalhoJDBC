@@ -26,7 +26,6 @@ public class EntregasPorMotorista {
                 for(String linha : relatorio){
                     Ferramentas.linha();
                     System.out.println(linha);
-                    Ferramentas.linha();
                 }
             }
         }catch(Exception e){

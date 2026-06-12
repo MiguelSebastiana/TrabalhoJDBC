@@ -17,14 +17,11 @@ public class PedidoPendenteEstado {
         try{
             List<String> relatorio = service.relatorioPendentesEstado();
             if(relatorio.isEmpty()){
-                Ferramentas.linha();
                 System.out.println("Não há nenhum pedido pendente por Estado");
-                Ferramentas.linha();
             }else{
                 for(String linha : relatorio){
                     Ferramentas.linha();
                     System.out.println(linha);
-                    Ferramentas.linha();
                 }
             }
         }catch(Exception e){

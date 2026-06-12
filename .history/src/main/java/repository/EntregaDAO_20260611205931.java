@@ -91,6 +91,7 @@ public class EntregaDAO {
                     SELECT m.nome, COUNT(e.id) AS total_entregas
                     FROM Entrega e
                     INNER JOIN Motorista m ON e.motorista_id = m.id
+                    WHERE e.status = ''
                     GROUP BY m.id, m.nome
                 """;
 
@@ -99,7 +100,7 @@ public class EntregaDAO {
                     ResultSet rs = stmt.executeQuery()){
 
                         while (rs.next()) {
-                            linhas.add(String.format("Motorista: %s | Total de Entregas: %d", 
+                            linhas.add(String.format("Motorista: % | Total de Entregas: %d", 
                                 rs.getString("nome"), rs.getInt("total_entregas")));
                         }
                     }
