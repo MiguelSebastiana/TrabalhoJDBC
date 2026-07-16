@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
     
-    private static String URL = "jdbc:mysql://localhost:3306/logistica_db?useSSL=false&serverTimezone=UTC";
+    private static String URL = "jdbc:mysql://localhost:3306/SistemaLogistica?useSSL=false&serverTimezone=UTC";
     private static String USER = "root";
     private static String PASSWORD = "mysqlPW";
 
@@ -15,4 +15,5 @@ public class ConnectionFactory {
         return DriverManager.getConnection(URL, USER, PASSWORD);
         
     }
+    
 }

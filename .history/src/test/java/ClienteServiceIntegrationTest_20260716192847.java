@@ -1,0 +1,9 @@
+
+@Test
+
+public class ClienteServiceIntegrationTest {
+    
+
+
+
+}
